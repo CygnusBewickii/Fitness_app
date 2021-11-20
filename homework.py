@@ -1,12 +1,6 @@
 class InfoMessage:
     """Информационное сообщение о тренировке."""
-    def __init__(self, training_type, duration, distance, speed, calories):
-        self.training_type = training_type
-        self.duration = duration / 60
-        self.distance = distance
-        self.speed = speed
-        self.calories = calories
-
+    def show_mes():
 
 
 class Training:
@@ -54,9 +48,6 @@ class Running(Training):
     def get_spent_calories(self) -> float:
         return (self.coeff_calorie_1 * self.get_mean_speed() - self.coeff_calorie_2) * self.weight / self.M_IN_KM * self.duration
 
-
-
-
 class SportsWalking(Training):
     """Тренировка: спортивная ходьба."""
     walk_coeff_calorie_1 = 0.035
@@ -96,7 +87,7 @@ class Swimming(Training):
 
     def get_spent_calories(self) -> float:
         return (self.get_mean_speed() + 1.1) * 2 * self.weight
-        
+
 
 
 def read_package(workout_type: str, data: list) -> Training:
