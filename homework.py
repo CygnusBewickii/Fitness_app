@@ -46,7 +46,7 @@ class Running(Training):
 
 class SportsWalking(Training):
     """Тренировка: спортивная ходьба."""
-    pass
+    super()
 
 
 class Swimming(Training):
