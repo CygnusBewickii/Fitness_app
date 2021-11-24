@@ -1,6 +1,19 @@
 class InfoMessage:
     """Информационное сообщение о тренировке."""
-    def show_mes():
+    def __init__(self,
+                 training_type,
+                 duration,
+                 distance,
+                 speed,
+                 calories):
+        self.training_type = training_type
+        self.duration = duration
+        self.distance = distance
+        self.speed = speed
+        self.calories = calories
+
+    def get_message(self):
+        return f"Тип тренировки: {self.training_type}; Длительность: {self.duration / 60} ч.; Дистанция: {self.distance}; Ср. скорость {self.speed} км/ч; Потрачено ккал: {self.calories}."
 
 
 class Training:
@@ -30,7 +43,7 @@ class Training:
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
-        return InfoMessage()
+        return InfoMessage().get_message(self, type(self), self.duration, self.get_distance(), self.get_mean_speed(), self.get_spent_calories())
 
 
 class Running(Training):
